@@ -4,7 +4,7 @@ import java.lang.ref.SoftReference;
 
 /**
  * 软引用的测试：内存不足即回收
- *
+ *-Xms10m -Xmx10m -XX:+PrintGCDetails
  * @author shkstart  shkstart@126.com
  * @create 2020  16:06
  */
@@ -49,7 +49,7 @@ public class SoftReferenceTest {
             e.printStackTrace();
         } finally {
             //再次从软引用中获取数据
-            System.out.println(userSoftRef.get());//在报OOM之前，垃圾回收器会回收软引用的可达对象。
+            System.out.println("after:"+userSoftRef.get());//在报OOM之前，垃圾回收器会回收软引用的可达对象。
         }
     }
 }
